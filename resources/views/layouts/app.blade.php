@@ -32,6 +32,7 @@
                             <li class="mr-4"><a class="text-orange-500 hover:text-orange-400" href="{{ route('login') }}">Inloggen</a></li>
                         @endguest
                         @auth
+                            <li class="mr-4"><a class="text-orange-500 hover:text-orange-400" href="{{ route('dashboard') }}">dashboard</a></li>
                             <li class="mr-4"><a class="text-orange-500 hover:text-orange-400" href="{{ route('logout') }}">Uitloggen</a></li>
                         @endauth
                     </ul>
