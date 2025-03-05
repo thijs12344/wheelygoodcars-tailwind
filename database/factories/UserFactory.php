@@ -23,9 +23,23 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $firstNames = [
+            'John', 'Jane', 'Michael', 'Sarah', 'David', 'Emma', 'James', 'Olivia', 'William', 'Sophia',
+            'Benjamin', 'Isabella', 'Lucas', 'Mia', 'Ethan', 'Charlotte', 'Alexander', 'Amelia', 'Daniel', 'Harper',
+            'Matthew', 'Avery', 'Samuel', 'Ella', 'Joseph', 'Lily', 'Henry', 'Aria', 'Gabriel', 'Scarlett',
+            'Andrew', 'Zoe', 'Charles', 'Layla', 'Jack', 'Grace', 'Jackson', 'Chloe', 'Sebastian', 'Madeline'
+        ];
+
+        $lastNames = [
+            'Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor',
+            'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Thompson', 'Garcia', 'Martinez', 'Roberts',
+            'Lopez', 'Gonzalez', 'Perez', 'Wilson', 'Young', 'Allen', 'King', 'Scott', 'Green', 'Adams', 'Baker',
+            'Nelson', 'Hill', 'Carter', 'Mitchell', 'Perez', 'Robinson', 'Martinez', 'Murray', 'Dunn', 'Scott'
+        ];
+
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => $this->faker->randomElement($firstNames) . ' ' . $this->faker->randomElement($lastNames),
+            'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
