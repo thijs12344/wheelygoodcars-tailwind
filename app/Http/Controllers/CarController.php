@@ -9,7 +9,7 @@ class CarController extends Controller
 {
     public function create_step1()
     {
-        return view('cars.create-step1');
+        return view('cars.create_step1');
     }
 
     public function create_step2(Request $request)
@@ -21,7 +21,7 @@ class CarController extends Controller
         // Kenteken opslaan in sessie
         $request->session()->put('license_plate', $request->license_plate);
 
-        return view('cars.create-step2', ['license_plate' => $request->license_plate]);
+        return view('cars.create_step2', ['license_plate' => $request->license_plate]);
     }
 
     public function store(Request $request)

@@ -1,6 +1,4 @@
 <x-app-layout>
-
-    @section('content')
     <h1>Stap 2: Vul de autogegevens in</h1>
     <form action="{{ route('cars.store') }}" method="POST">
         @csrf
@@ -19,8 +17,5 @@
 
         <button type="submit">Opslaan</button>
     </form>
-@endsection
-
-
 </x-app-layout>
 
