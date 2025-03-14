@@ -45,4 +45,11 @@ class CarController extends Controller
 
         return redirect()->route('dashboard')->with('success', 'Auto succesvol toegevoegd!');
     }
+
+    public function index()
+    {
+    $cars = Car::where('user_id', auth()->id())->get();
+    return view('cars.view', compact('cars'));
+    }
+
 }
