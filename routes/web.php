@@ -20,7 +20,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/cars/create/', [CarController::class, 'create_step1'])->name('cars.create');
+    Route::get('/cars/create', [CarController::class, 'create_step1'])->name('cars.create.step1');
+    Route::post('/cars/create/step2', [CarController::class, 'create_step2'])->name('cars.create.step2');
+    Route::post('/cars/store', [CarController::class, 'store'])->name('cars.store');
 });
 
 require __DIR__.'/auth.php';
