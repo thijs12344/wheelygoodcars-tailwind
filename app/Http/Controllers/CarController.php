@@ -51,5 +51,37 @@ class CarController extends Controller
     $cars = Car::where('user_id', auth()->id())->get();
     return view('cars.view', compact('cars'));
     }
+    public function edit(Car $car)
+    {
+    if ($car->user_id !== auth()->id()) {
+        abort(403, 'Je hebt geen toestemming om deze auto te bewerken.');
+    }
+
+    return view('cars.edit', compact('car'));
+    }
+
+    public function update(Request $request, Car $car)
+    {
+    if ($car->user_id !== auth()->id()) {
+        abort(403, 'Je hebt geen toestemming om deze auto te updaten.');
+    }
+
+    $request->validate([
+        'brand' => 'required|string',
+        'model' => 'required|string',
+        'price' => 'required|numeric',
+        'mileage' => 'required|integer',
+    ]);
+
+    $car->update([
+        'brand' => $request->brand,
+        'model' => $request->model,
+        'price' => $request->price,
+        'mileage' => $request->mileage,
+    ]);
+
+    return redirect()->route('cars.view')->with('success', 'Auto succesvol bijgewerkt!');
+    }
+
 
 }

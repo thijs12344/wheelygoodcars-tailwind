@@ -11,7 +11,8 @@
                 <th>Model</th>
                 <th>Prijs</th>
                 <th>Kilometerstand</th>
-                <th>Acties</th>
+                <th>edit</th>
+                <th>delete</th>
             </tr>
             @foreach($cars as $car)
                 <tr>
@@ -20,6 +21,9 @@
                     <td>{{ $car->model }}</td>
                     <td>€{{ number_format($car->price, 2, ',', '.') }}</td>
                     <td>{{ number_format($car->mileage, 0, ',', '.') }} km</td>
+                    <td>
+                        <a href="{{ route('cars.edit', $car) }}">Bewerken</a>
+                    </td>
                 </tr>
             @endforeach
         </table>
