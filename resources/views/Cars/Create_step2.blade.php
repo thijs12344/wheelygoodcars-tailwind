@@ -1,6 +1,6 @@
 <x-app-layout>
     <h1>Stap 2: Vul de autogegevens in</h1>
-    <form action="{{ route('cars.store') }}" method="POST">
+    <form action="{{ route('cars') }}" method="POST">
         @csrf
         <p>Kenteken: {{ $license_plate }}</p>
         <label for="brand">Merk:</label>
