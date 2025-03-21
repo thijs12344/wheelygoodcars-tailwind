@@ -66,7 +66,6 @@ class CarFactory extends Factory
             'production_year' => $this->faker->numberBetween(1900, 2024),
             'color' => $this->faker->safeColorName(),
             'views' => $this->faker->numberBetween(0,1000),
-            'tags' => $this->faker->numberBetween(1,20),
         ];
     }
 }
