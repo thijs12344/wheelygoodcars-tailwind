@@ -21,6 +21,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/cars', [CarController::class, 'index'])->name('cars.view');
+    Route::get('/sellerDb', [CarController::class, 'sellerDb'])->name('cars.sellerDb');
     Route::get('/cars/create', [CarController::class, 'create_step1'])->name('cars.create.step1');
     Route::post('/cars/create/step2', [CarController::class, 'create_step2'])->name('cars.create.step2');
     Route::post('/cars/store', [CarController::class, 'store'])->name('cars');

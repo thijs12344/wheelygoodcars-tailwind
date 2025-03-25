@@ -20,9 +20,9 @@
                 <a class="text-lg text-white min-w-48" href="{{ route('home') }}"><strong class="text-orange-500 text-bold">Wheely</strong> good cars<strong class="text-orange-500 text-bold">!</strong></a>
                 <div class="flex justify-between w-full" id="navbarNav">
                     <ul class="flex items-end">
-                        <li class="mr-4"><a class="text-white hover:text-gray-300" href="">Alle auto's</a></li>
+                        <li class="mr-4"><a class="text-white hover:text-gray-300" href="/cars">Alle auto's</a></li>
                         @auth
-                            <li class="mr-4"><a class="text-white hover:text-gray-300" href="/cars">Mijn aanbod</a></li>
+                            <li class="mr-4"><a class="text-white hover:text-gray-300" href="/sellerDb">Mijn aanbod</a></li>
                             <li class="mr-4"><a class="text-white hover:text-gray-300" href="/cars/create/">Aanbod plaatsen</a></li>
                         @endauth
                     </ul>

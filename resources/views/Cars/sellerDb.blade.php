@@ -1,5 +1,5 @@
 <x-app-layout>
-    <h1 class="text-4xl font-bold m-4">Alle auto's</h1>
+    <h1 class="text-4xl font-bold m-4">Mijn auto's</h1>
 
     @if($cars->isEmpty())
         <p>Je hebt nog geen auto's toegevoegd.</p>
