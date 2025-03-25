@@ -48,7 +48,9 @@ class CarController extends Controller
 
     public function index()
     {
-    $cars = Car::all();
+
+    $cars = Car::paginate(8);
+
     return view('cars.view', compact('cars'));
     }
     public function edit(Car $car)
@@ -85,7 +87,8 @@ class CarController extends Controller
     }
 
     public function sellerDb(){
-        $cars = Car::where('user_id', auth()->id())->get();
+        $cars = Car::where('user_id', auth()->id())->paginate(8);
+
 
         return view('cars.sellerDb', compact('cars'));
     }

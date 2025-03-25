@@ -30,5 +30,22 @@
             @endforeach
         </div>
 
+        <div class="pagination">
+            <!-- Previous Page Button -->
+            @if ($cars->onFirstPage())
+                <button disabled class="hidden">Previous</button>
+            @else
+                <a class="p-2 bg-orange-500 text-white rounded-md" href="{{ $cars->previousPageUrl() }}" class="">Previous</a>
+            @endif
+
+            <!-- Next Page Button -->
+            @if ($cars->hasMorePages())
+                <a href="{{ $cars->nextPageUrl() }}" class="p-2 bg-orange-500 text-white rounded-md">Next</a>
+            @else
+                <button disabled class="hidden">Next</button>
+            @endif
+        </div>
+
+
     @endif
 </x-app-layout>
