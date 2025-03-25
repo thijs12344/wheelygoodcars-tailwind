@@ -14,6 +14,7 @@
                         <p class=""><strong>Kenteken:</strong> {{ $car->license_plate }}</p>
                         <p class=""><strong>Prijs:</strong> €{{ number_format($car->price, 2, ',', '.') }}</p>
                         <p class="mb-4"><strong>Kilometerstand:</strong> {{ number_format($car->mileage, 0, ',', '.') }} km</p>
+                        @if(auth()->id() == $car->user_id)
                         <div class="flex justify-between mr-4">
                             <a class="my-auto transition-transform transform hover:underline hover:scale-[105%]" href="{{ route('cars.edit', $car) }}">Bewerken</a>
                             <form action="{{ route('cars.destroy', $car) }}" method="POST">
@@ -22,6 +23,7 @@
                                 <button type="submit" class="text-white bg-red-600 px-2 py-1 rounded-md transition-transform transform hover:underline hover:scale-[105%]">Verwijder aanbod</button>
                             </form>
                         </div>
+                        @endif
                     </div>
 
                 </div>
