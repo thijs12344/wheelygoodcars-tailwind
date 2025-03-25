@@ -67,17 +67,11 @@ class CarController extends Controller
     }
 
     $request->validate([
-        'brand' => 'required|string',
-        'model' => 'required|string',
         'price' => 'required|numeric',
-        'mileage' => 'required|integer',
     ]);
 
     $car->update([
-        'brand' => $request->brand,
-        'model' => $request->model,
         'price' => $request->price,
-        'mileage' => $request->mileage,
     ]);
 
     return redirect()->route('cars.view')->with('success', 'Auto succesvol bijgewerkt!');
