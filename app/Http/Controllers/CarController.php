@@ -83,5 +83,12 @@ class CarController extends Controller
     return redirect()->route('cars.view')->with('success', 'Auto succesvol bijgewerkt!');
     }
 
+    public function destroy(Car $car)
+    {
+        $car->delete();
+        return redirect()->route('cars.view')->with('success', 'aanbod succesvol verwijderd!');
+
+    }
+
 
 }

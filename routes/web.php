@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/cars/store', [CarController::class, 'store'])->name('cars');
     Route::get('/cars/{car}/edit', [CarController::class, 'edit'])->name('cars.edit');
     Route::post('/cars/{car}/update', [CarController::class, 'update'])->name('cars.update');
+    Route::delete('/cars/{car}/destroy', [CarController::class, 'destroy'])->name('cars.destroy');
 });
 
 require __DIR__.'/auth.php';
