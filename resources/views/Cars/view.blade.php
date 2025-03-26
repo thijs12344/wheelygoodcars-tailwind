@@ -11,6 +11,7 @@
                     <div class="p-3 bg-white rounded-md">
                         <h2 class=" text-2xl font-bold underline mb-2">{{ $car->brand }} </h2>
                         <h3 class=" text-lg font-semibold">{{ $car->model }}</h3>
+                        <img src="{{ asset($car->image) }}" alt="Car Image">
                         <p class=""><strong>Kenteken:</strong> {{ $car->license_plate }}</p>
                         <p class=""><strong>Prijs:</strong> €{{ number_format($car->price, 2, ',', '.') }}</p>
                         <p class="mb-4"><strong>Kilometerstand:</strong> {{ number_format($car->mileage, 0, ',', '.') }} km</p>

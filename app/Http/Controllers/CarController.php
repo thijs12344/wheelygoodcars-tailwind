@@ -31,7 +31,13 @@ class CarController extends Controller
             'model' => 'required|string',
             'price' => 'required|numeric',
             'mileage' => 'required|integer',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->move('img', time() . '_' . $request->file('image')->getClientOriginalName());
+        }
 
         // Auto opslaan in de database
         Car::create([
@@ -41,6 +47,8 @@ class CarController extends Controller
             'model' => $request->model,
             'price' => $request->price,
             'mileage' => $request->mileage,
+            'image' => $imagePath,
+
         ]);
 
         return redirect()->route('dashboard')->with('success', 'Auto succesvol toegevoegd!');

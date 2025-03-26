@@ -10,6 +10,6 @@ class Car extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'license_plate', 'brand', 'model', 'price', 'mileage',
+        'user_id', 'license_plate', 'brand', 'model', 'price', 'mileage', 'image',
     ];
 }
