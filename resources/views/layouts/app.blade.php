@@ -14,7 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" style="background-image: url('{{ asset('/img/background.jpg') }}'); background-size: cover; background-position: center;">
         <nav class="bg-black flex py-3">
             <div class="w-full mx-auto px-4 flex">
                 <a class="text-lg text-white min-w-48" href="{{ route('home') }}"><strong class="text-orange-500 text-bold">Wheely</strong> good cars<strong class="text-orange-500 text-bold">!</strong></a>
