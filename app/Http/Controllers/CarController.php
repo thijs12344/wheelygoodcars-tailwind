@@ -101,5 +101,17 @@ class CarController extends Controller
         return view('cars.sellerDb', compact('cars'));
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        // Zoek op zowel 'brand' als 'name'
+        $results = Car::where('brand', 'like', "%$search%")
+                    ->orWhere('model', 'like', "%$search%")
+                    ->get();
+
+        return view('cars.view', ['results' => $results]);
+    }
+
 
 }
